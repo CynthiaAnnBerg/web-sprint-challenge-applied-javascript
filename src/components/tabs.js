@@ -13,6 +13,19 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+
+javascript.appendChild(javascript);
+bootstrap.appendChild(bootstrap);
+technology.appendChild(technology);
+
+javascript.classList.add('javascript');
+bootstrap.classList.add('bootstrap');
+technology.classList.add('technology');
+
+javascript.textContent = javascript;
+bootstrap.textContent = bootstrap;
+technology.textContent = technology;
 }
 
 const tabsAppender = (selector) => {
@@ -23,6 +36,21 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  a.href = "https://lambda-times-api.herokuapp.com/topics";
+  //{"topics":["javascript","bootstrap","technology","jquery","node.js"]}
+  tabs = Tabs(['foo', 'bar', 'baz'])
+  (queries.getByText(tabs, 'foo'))
+  (queries.getByText(tabs, 'bar'))
+  (queries.getByText(tabs, 'baz'))
+  title.topics (javascript, bootstrap, technology)
+  title.tabsAppender(topics);
+  console.log(tabsAppender);
 }
+
+tabs.addEventListener('click', function (event){
+  console.log('using the event listener');
+});
+
+return tabsAppender;
 
 export { Tabs, tabsAppender }
